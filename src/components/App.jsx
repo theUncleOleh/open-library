@@ -1,16 +1,13 @@
-export const App = () => {
+import { Routes, Route } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Layout from './Layout/Layout';
+export default function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+      </Route>
+    </Routes>
   );
-};
+}
